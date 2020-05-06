@@ -1,19 +1,26 @@
 #pragma once
-#include <ostream>
-#include "Comanda.h"
-#include <list>;
+#include <iostream>
+#include "Serie.h"
+#include <vector>;
+#include <string.h>
 using namespace std;
 
-class Telefon : public Comanda {
+class Telefon : public Serie {
 private:
-	list <char*> operatori;
+	vector <string> operatori;
 public:
 	Telefon();
-	Telefon(list <char*> operatori);
+	Telefon(const char*, const char*, int, vector<string>);
 	Telefon(const Telefon& c);
 	~Telefon();
-	list <char*> getOperatori();
+	vector <string> getOperatori();
+	void setOperatori(vector<string>);
 	Telefon& operator=(const Telefon& c);
 	bool operator==(const Telefon& c);
-	friend ostream& operator<<(ostream& os, const Telefon& c);
+	friend ostream& operator<<(ostream& os, Telefon);
+	friend istream& operator>>(istream&, Telefon&);
+	string toString();
+	string toStringDelimiter(char delim);
+	Telefon(string, char);
+	Serie* clone();
 };

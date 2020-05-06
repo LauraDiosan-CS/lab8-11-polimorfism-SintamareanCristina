@@ -1,0 +1,3 @@
+a a 2 orange
+c c 3 cosmote
+x x 3 4
