@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
+#include <vector>
 #include "Service.h"
+#include "TelefonValidator.h"
 using namespace std;
 
 class UI
@@ -10,8 +12,12 @@ private:
 public:
 	UI(Service& service) : s(service) {};
 	int login();
-	//int logout();
+	void logout();
 	void showMenu();
 	void showAll();
+	void addElem();
+	void delElem();
+	void updateElem();
+	void showByName();
 	~UI();
 };
